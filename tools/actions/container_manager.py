@@ -86,6 +86,10 @@ def set_permissions(args, perm_list=None, mode="777"):
             "/dev/ion",
         ]
 
+        # Camera
+        perm_list.extend(glob.glob("/dev/media*"))
+        perm_list.extend(glob.glob("/dev/v4l-subdev*"))
+
         # Framebuffers
         perm_list.extend(glob.glob("/dev/fb*"))
         # Videos
